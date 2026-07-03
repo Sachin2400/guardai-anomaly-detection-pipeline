@@ -127,19 +127,4 @@ Response:
 {"status": "ok", "model_loaded": true}
 ```
 
-## 7. What Each Phase Demonstrates (for interview talking points)
 
-| Phase | Skill demonstrated |
-|---|---|
-| Data generation + Isolation Forest + PSI | Classical ML, unsupervised anomaly detection, statistical drift monitoring (MLOps) |
-| spaCy NER + regex masking | Applied NLP, privacy-by-design engineering |
-| FastAPI + Pydantic | Backend API design, input validation, production service patterns |
-| Docker | Containerization, reproducible deployment |
-| pytest suite | Testing discipline, mocking external dependencies (NER model) in unit tests |
-
-## 8. Possible Extensions (mention these in interviews to show depth)
-- Swap Isolation Forest for a `River`-based online/streaming detector for true real-time drift.
-- Add Prometheus metrics (`/metrics`) for anomaly-rate monitoring in production.
-- Swap spaCy for `dslim/bert-base-NER` via HuggingFace when higher recall is needed on
-  messier text, at the cost of latency (worth A/B testing).
-- Add an audit log table (entity type + count only, never raw PII) for compliance reporting.
