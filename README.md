@@ -115,7 +115,12 @@ GET /v1/healthJSON{
 **🧪Testing**
 
 ```
-Run pytest -v to execute the test suite.Test AreaCoverageAnomaly EngineNormal vs. extreme record classificationPSI Drift MetricIdentical & shifted distribution scenariosPII MaskingEntity + regex merge logic (mocked NER)API/v1/health, /v1/scan happy path & validation errorsResult: 9/9 tests passing ✅📁 Project StructurePlaintextGuardAI/
+Run pytest -v to execute the test suite.Test AreaCoverageAnomaly EngineNormal vs. extreme record classificationPSI Drift MetricIdentical & shifted distribution scenariosPII MaskingEntity + regex merge logic (mocked NER)API/v1/health, /v1/scan happy path & validation errorsResult: 9/9 tests passing ✅
+```
+
+**📁 Project Structure**
+```
+PlaintextGuardAI/
 ├── src/
 │   ├── data_generation.py   # Synthetic baseline + drift datasets
 │   ├── anomaly_engine.py    # Isolation Forest + PSI
