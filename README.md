@@ -6,7 +6,7 @@ Overview • Features • Architecture • Quick Start • API • Tests • Ski
 
 ---
 
-## 📌 Overview
+**📌Overview**
 
 Enterprises ingest constant streams of user-generated data — transactions, support tickets, form submissions. Two things silently go wrong with that data if nobody's watching:
 1. **📉 Statistical drift:** Incoming data quietly shifts away from what a downstream ML model was trained on, degrading predictions until someone notices too late.
@@ -16,7 +16,7 @@ Enterprises ingest constant streams of user-generated data — transactions, sup
 
 ---
 
-## ✨ Key Features
+**✨Key Features**
 
 * **🎯 Unsupervised anomaly detection:** `Isolation Forest` — no labeled fraud/anomaly data required.
 * **📊 Statistical drift monitoring:** Population Stability Index (PSI) — the same metric real MLOps teams use to trigger retraining.
@@ -28,7 +28,7 @@ Enterprises ingest constant streams of user-generated data — transactions, sup
 
 ---
 
-## 🏗️ Architecture
+ **🏗️Architecture**
 
 ```mermaid
 graph TD
@@ -44,7 +44,7 @@ graph TD
     F --> G[✅ Safe JSON Response <br> Raw PII never logged]
 ```
 
-##🧰 Tech Stack
+**🧰 Tech Stack**
 
 ```
 Layer	          Technology
@@ -56,7 +56,7 @@ Testing	          pytest (with mocking)
 Deployment	      Docker
 ```
 
-##🚀 Quick Start
+**🚀Quick Start**
 
 ```
 1. Clone the repository
@@ -88,10 +88,8 @@ Bashpytest -v
 ```
 Open http://127.0.0.1:8000/docs for interactive Swagger UI.🐳 Or run it with Docker:Bashdocker build -t guardai:latest .
 docker run -p 8000:8000 guardai:latest
-```
 
-##📡 API Usage
-
+**📡API Usage**
 ```
 
 POST /v1/scanRequest:JSON{
@@ -114,7 +112,7 @@ GET /v1/healthJSON{
 
 ```
 
-##🧪 Testing
+**🧪Testing**
 
 ```
 Run pytest -v to execute the test suite.Test AreaCoverageAnomaly EngineNormal vs. extreme record classificationPSI Drift MetricIdentical & shifted distribution scenariosPII MaskingEntity + regex merge logic (mocked NER)API/v1/health, /v1/scan happy path & validation errorsResult: 9/9 tests passing ✅📁 Project StructurePlaintextGuardAI/
@@ -131,10 +129,10 @@ Run pytest -v to execute the test suite.Test AreaCoverageAnomaly EngineNormal vs
 └── README.md
 ```
 
-##💡 Skills 
+**💡Skills** 
 
 ```
-Area	                                   Evidence
+      Area                                               Evidence
 Machine Learning	                       Trained & tuned Isolation Forest; implemented PSI from first principles
 Applied NLP	                               Entity-recognition pipeline with span-merging for overlapping matches
 Backend Engineering	                       Validated REST API with clean request/response contracts
@@ -145,10 +143,10 @@ Privacy Engineering	                       Raw PII never logged, by architecture
 
 ```
 
-🛣️ Roadmap[ ]
+**🛣️Roadmap[ ]**
 
 ```
 Swap batch Isolation Forest for a streaming/online anomaly detector.[ ] Add Prometheus metrics for live anomaly-rate dashboards.[ ] Swap spaCy for a transformer-based NER model for higher recall on messy text.[ ] Add a compliance-friendly audit log (entity type + count only, never raw PII).
 ```
 
-📄 LicenseMIT — free to use, modify, and learn from.
+**📄LicenseMIT** — free to use, modify, and learn from.
