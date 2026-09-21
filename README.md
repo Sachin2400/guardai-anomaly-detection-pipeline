@@ -42,6 +42,8 @@ graph TD
     E -->|sanitized_bio| F
     
     F --> G[✅ Safe JSON Response <br> Raw PII never logged]
+
+🧰 Tech Stack
 Layer,Technology
 Language,Python 3.10
 Classical ML,"scikit-learn (Isolation Forest), NumPy, Pandas"
