@@ -1,4 +1,4 @@
-# 🛡️ GuardAI: Enterprise AI Guardrail & Anomaly Detection Pipeline
+Markdown# 🛡️ GuardAI: Enterprise AI Guardrail & Anomaly Detection Pipeline
 
 **Catches bad data before it breaks your models. Redacts PII before it leaks into your logs.**
 
@@ -44,31 +44,48 @@ graph TD
     F --> G[✅ Safe JSON Response <br> Raw PII never logged]
 ```
 
-## 🧰 Tech Stack
+##🧰 Tech Stack
 
 ```
-Layer,Technology
-Language,Python 3.10
-Classical ML,"scikit-learn (Isolation Forest), NumPy, Pandas"
-NLP / AI,spaCy (Named Entity Recognition)
-Backend API,"FastAPI, Pydantic, Uvicorn"
-Testing,pytest (with mocking)
-Deployment,Docker
+Layer	          Technology
+Language	      Python 3.10
+Classical ML	  scikit-learn (Isolation Forest), NumPy, Pandas
+NLP / AI	      spaCy (Named Entity Recognition)
+Backend API	      FastAPI, Pydantic, Uvicorn
+Testing	          pytest (with mocking)
+Deployment	      Docker
 ```
 
 ##🚀 Quick Start
 
 ```
-1. Clone the repositoryBashgit clone [https://github.com/Sachin2400/guardai-anomaly-detection-pipeline.git](https://github.com/Sachin2400/guardai-anomaly-detection-pipeline.git)
+1. Clone the repository
+```
+Bashgit clone [https://github.com/Sachin2400/guardai-anomaly-detection-pipeline.git](https://github.com/Sachin2400/guardai-anomaly-detection-pipeline.git)
 cd guardai-anomaly-detection-pipeline
-2. Create environment & install dependenciesBashconda create -n guardai python=3.10 -y
+```
+
+2. Create environment & install dependencies
+```
+Bashconda create -n guardai python=3.10 -y
 conda activate guardai
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
-3. Generate data + train the anomaly modelBashpython src/data_generation.py
+```
+
+3. Generate data + train the anomaly model
+```
+Bashpython src/data_generation.py
 python src/anomaly_engine.py
-4. Run testsBashpytest -v
+```
+
+4. Run tests
+```
+Bashpytest -v
+```
+
 5. Launch the APIBashuvicorn src.api:app --reload --port 8000
+```
 Open http://127.0.0.1:8000/docs for interactive Swagger UI.🐳 Or run it with Docker:Bashdocker build -t guardai:latest .
 docker run -p 8000:8000 guardai:latest
 ```
@@ -76,6 +93,7 @@ docker run -p 8000:8000 guardai:latest
 ##📡 API Usage
 
 ```
+
 POST /v1/scanRequest:JSON{
   "user_data": {
     "age": 45,
@@ -93,6 +111,7 @@ GET /v1/healthJSON{
   "status": "ok", 
   "model_loaded": true
 }
+
 ```
 
 ##🧪 Testing
@@ -112,8 +131,24 @@ Run pytest -v to execute the test suite.Test AreaCoverageAnomaly EngineNormal vs
 └── README.md
 ```
 
-##💡 Skills
+##💡 Skills 
 
 ```
-DemonstratedAreaEvidenceMachine LearningTrained & tuned Isolation Forest; implemented PSI from first principlesApplied NLPEntity-recognition pipeline with span-merging for overlapping matchesBackend EngineeringValidated REST API with clean request/response contractsMLOpsDrift monitoring — the metric that triggers real retraining pipelinesTestingPytest suite mocking external dependenciesDevOpsDockerfile that trains the model at build time — a deployment-ready imagePrivacy EngineeringRaw PII never logged, by architecture — not just by policy🛣️ Roadmap[ ] Swap batch Isolation Forest for a streaming/online anomaly detector.[ ] Add Prometheus metrics for live anomaly-rate dashboards.[ ] Swap spaCy for a transformer-based NER model for higher recall on messy text.[ ] Add a compliance-friendly audit log (entity type + count only, never raw PII).📄 LicenseMIT — free to use, modify, and learn from.
+Area	                                   Evidence
+Machine Learning	                       Trained & tuned Isolation Forest; implemented PSI from first principles
+Applied NLP	                               Entity-recognition pipeline with span-merging for overlapping matches
+Backend Engineering	                       Validated REST API with clean request/response contracts
+MLOps	                                   Drift monitoring — the metric that triggers real retraining pipelines
+Testing	                                   Pytest suite mocking external dependencies
+DevOps	                                   Dockerfile that trains the model at build time — a deployment-ready image
+Privacy Engineering	                       Raw PII never logged, by architecture — not just by policy
+
 ```
+
+🛣️ Roadmap[ ]
+
+```
+Swap batch Isolation Forest for a streaming/online anomaly detector.[ ] Add Prometheus metrics for live anomaly-rate dashboards.[ ] Swap spaCy for a transformer-based NER model for higher recall on messy text.[ ] Add a compliance-friendly audit log (entity type + count only, never raw PII).
+```
+
+📄 LicenseMIT — free to use, modify, and learn from.
