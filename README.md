@@ -42,9 +42,11 @@ graph TD
     E -->|sanitized_bio| F
     
     F --> G[✅ Safe JSON Response <br> Raw PII never logged]
+```
+
+## 🧰 Tech Stack
 
 ```
-🧰 Tech Stack
 Layer,Technology
 Language,Python 3.10
 Classical ML,"scikit-learn (Isolation Forest), NumPy, Pandas"
@@ -52,7 +54,12 @@ NLP / AI,spaCy (Named Entity Recognition)
 Backend API,"FastAPI, Pydantic, Uvicorn"
 Testing,pytest (with mocking)
 Deployment,Docker
-🚀 Quick Start1. Clone the repositoryBashgit clone https://github.com/Sachin2400/guardai-anomaly-detection-pipeline.git
+```
+
+##🚀 Quick Start
+
+```
+1. Clone the repositoryBashgit clone [https://github.com/Sachin2400/guardai-anomaly-detection-pipeline.git](https://github.com/Sachin2400/guardai-anomaly-detection-pipeline.git)
 cd guardai-anomaly-detection-pipeline
 2. Create environment & install dependenciesBashconda create -n guardai python=3.10 -y
 conda activate guardai
@@ -64,7 +71,12 @@ python src/anomaly_engine.py
 5. Launch the APIBashuvicorn src.api:app --reload --port 8000
 Open http://127.0.0.1:8000/docs for interactive Swagger UI.🐳 Or run it with Docker:Bashdocker build -t guardai:latest .
 docker run -p 8000:8000 guardai:latest
-📡 API UsagePOST /v1/scanRequest:JSON{
+```
+
+##📡 API Usage
+
+```
+POST /v1/scanRequest:JSON{
   "user_data": {
     "age": 45,
     "amount": 95000,
@@ -77,8 +89,16 @@ Response:JSON{
   "sanitized_bio": "My name is [PERSON] and my email is [EMAIL].",
   "entities_masked": 2
 }
-GET /v1/healthJSON{"status": "ok", "model_loaded": true}
-🧪 TestingRun pytest -v to execute the test suite.Test AreaCoverageAnomaly EngineNormal vs. extreme record classificationPSI Drift MetricIdentical & shifted distribution scenariosPII MaskingEntity + regex merge logic (mocked NER)API/v1/health, /v1/scan happy path & validation errorsResult: 9/9 tests passing ✅📁 Project StructurePlaintextGuardAI/
+GET /v1/healthJSON{
+  "status": "ok", 
+  "model_loaded": true
+}
+```
+
+##🧪 Testing
+
+```
+Run pytest -v to execute the test suite.Test AreaCoverageAnomaly EngineNormal vs. extreme record classificationPSI Drift MetricIdentical & shifted distribution scenariosPII MaskingEntity + regex merge logic (mocked NER)API/v1/health, /v1/scan happy path & validation errorsResult: 9/9 tests passing ✅📁 Project StructurePlaintextGuardAI/
 ├── src/
 │   ├── data_generation.py   # Synthetic baseline + drift datasets
 │   ├── anomaly_engine.py    # Isolation Forest + PSI
@@ -90,4 +110,10 @@ GET /v1/healthJSON{"status": "ok", "model_loaded": true}
 ├── requirements.txt
 ├── Dockerfile
 └── README.md
-💡 Skills DemonstratedAreaEvidenceMachine LearningTrained & tuned Isolation Forest; implemented PSI from first principlesApplied NLPEntity-recognition pipeline with span-merging for overlapping matchesBackend EngineeringValidated REST API with clean request/response contractsMLOpsDrift monitoring — the metric that triggers real retraining pipelinesTestingPytest suite mocking external dependenciesDevOpsDockerfile that trains the model at build time — a deployment-ready imagePrivacy EngineeringRaw PII never logged, by architecture — not just by policy🛣️ Roadmap[ ] Swap batch Isolation Forest for a streaming/online anomaly detector.[ ] Add Prometheus metrics for live anomaly-rate dashboards.[ ] Swap spaCy for a transformer-based NER model for higher recall on messy text.[ ] Add a compliance-friendly audit log (entity type + count only, never raw PII).📄 LicenseMIT — free to use, modify, and learn from.
+```
+
+##💡 Skills
+
+```
+DemonstratedAreaEvidenceMachine LearningTrained & tuned Isolation Forest; implemented PSI from first principlesApplied NLPEntity-recognition pipeline with span-merging for overlapping matchesBackend EngineeringValidated REST API with clean request/response contractsMLOpsDrift monitoring — the metric that triggers real retraining pipelinesTestingPytest suite mocking external dependenciesDevOpsDockerfile that trains the model at build time — a deployment-ready imagePrivacy EngineeringRaw PII never logged, by architecture — not just by policy🛣️ Roadmap[ ] Swap batch Isolation Forest for a streaming/online anomaly detector.[ ] Add Prometheus metrics for live anomaly-rate dashboards.[ ] Swap spaCy for a transformer-based NER model for higher recall on messy text.[ ] Add a compliance-friendly audit log (entity type + count only, never raw PII).📄 LicenseMIT — free to use, modify, and learn from.
+```
